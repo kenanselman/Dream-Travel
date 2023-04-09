@@ -43,43 +43,45 @@ class _SelectedCitiesState extends State<SelectedCities> {
       body: Scaffold(
         key: scaffoldKey,
         drawer: const CustomDrawer(),
-        body: provider.imeGrada.isEmpty
-            ? const Center(
-                child: Text(
-                  'Nema odabranih favorita!',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                ),
-              )
-            : SafeArea(
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
-                  child: ListView.separated(
-                    physics: const AlwaysScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemCount: provider.imeGrada.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Tile(
-                        city: provider.imeGrada[index],
-                        i: index,
-                       
-                        onPressed: () => Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => CityPage(
-                              i: index,
-                              destination: provider.imeGrada[index],
+        body: Consumer<DataProvider>(builder: (context, value, child) {
+          return value.imeGrada.isEmpty
+              ? const Center(
+                  child: Text(
+                    'Nema odabranih favorita!',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                  ),
+                )
+              : SafeArea(
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.only(left: 10, right: 10, top: 10),
+                    child: ListView.separated(
+                      physics: const AlwaysScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: provider.imeGrada.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Tile(
+                          city: value.imeGrada[index],
+                          i: index,
+                          onPressed: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => CityPage(
+                                i: index,
+                                destination: value.imeGrada[index],
+                              ),
                             ),
                           ),
-                        ),
-                      );
-                    },
-                    separatorBuilder: (BuildContext context, int index) {
-                      return const SizedBox(
-                        height: 15,
-                      );
-                    },
+                        );
+                      },
+                      separatorBuilder: (BuildContext context, int index) {
+                        return const SizedBox(
+                          height: 15,
+                        );
+                      },
+                    ),
                   ),
-                ),
-              ),
+                );
+        }),
       ),
     );
   }

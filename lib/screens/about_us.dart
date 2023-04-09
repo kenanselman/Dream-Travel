@@ -74,10 +74,7 @@ class AboutUsScreen extends StatelessWidget {
                         fontSize: 18, fontWeight: FontWeight.w400),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(
-                        left: (30 / 360) * MediaQuery.of(context).size.width,
-                        right: (230 / 360) * MediaQuery.of(context).size.width,
-                        top: 25),
+                    padding: const EdgeInsets.only(top: 25),
                     child: CustomButton(
                         title: 'NAZAD',
                         colour: Colors.black,

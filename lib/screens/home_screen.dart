@@ -75,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Navigator.of(context).push(
                                   MaterialPageRoute(
                                     builder: (context) => SortedScreen(
-                                      lista: lista,
+                                      lista: pom,
                                     ),
                                   ),
                                 );

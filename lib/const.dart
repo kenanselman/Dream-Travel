@@ -50,7 +50,45 @@ List<Destination> lista = [
       'assets/images/destination8.jpg', 'assets/images/image8.jpg'),
 ];
 
-List<Destination> pom = lista;
+List<Destination> pom = [
+  Destination(
+      'BARCELONA, ŠPANIJA',
+      1160.0,
+      DateTime(2023, 2, 25),
+      planPutovanja[0],
+      'assets/images/destination1.jpg',
+      'assets/images/image1.jpg'),
+  Destination('BEČ, AUSTRIJA', 1230.0, DateTime(2023, 2, 28), planPutovanja[1],
+      'assets/images/destination2.jpg', 'assets/images/image2.jpg'),
+  Destination(
+      'BUDIMPEŠTA, MAĐARSKA',
+      1100.0,
+      DateTime(2023, 3, 5),
+      planPutovanja[2],
+      'assets/images/destination3.jpg',
+      'assets/images/image3.jpg'),
+  Destination(
+      'KANKUN, MEKSIKO',
+      3450.0,
+      DateTime(2023, 3, 15),
+      planPutovanja[3],
+      'assets/images/destination4.jpg',
+      'assets/images/image4.jpg'),
+  Destination('DUBAI, UAE', 2345.0, DateTime(2023, 4, 2), planPutovanja[4],
+      'assets/images/destination5.jpg', 'assets/images/image5.jpg'),
+  Destination(
+      'ISTANBUL, TURSKA',
+      850.0,
+      DateTime(2023, 5, 17),
+      planPutovanja[5],
+      'assets/images/destination6.jpg',
+      'assets/images/image6.jpg'),
+  Destination('LONDON, UK', 1450.0, DateTime(2023, 6, 5), planPutovanja[6],
+      'assets/images/destination7.jpg', 'assets/images/image7.jpg'),
+  Destination('MALDIVI', 2600.0, DateTime(2023, 7, 12), planPutovanja[7],
+      'assets/images/destination8.jpg', 'assets/images/image8.jpg'),
+];
+
 void sortPomAsc() {
   pom.sort((a, b) => a.price.compareTo(b.price));
 }
